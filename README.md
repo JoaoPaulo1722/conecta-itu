@@ -7,6 +7,12 @@ A plataforma é totalmente gratuita, intuitiva e pensada para impactar positivam
 
 ---
 
+## Link da Página via GitHub Pages:
+
+https://joaopaulo1722.github.io/conecta-itu/
+
+---
+
 ## 🚀 Funcionalidades
 
 - Cadastro de itens para doação ou troca.
@@ -27,8 +33,13 @@ A plataforma é totalmente gratuita, intuitiva e pensada para impactar positivam
 - **CSS3**
 - **JavaScript Vanilla**
 - **Font Awesome** (ícones)
-- # **LocalStorage** (armazenamento local)
+- **LocalStorage** (armazenamento local)
 
-# conecta-itu
+---
 
-Plataforma colaborativa para troca e doação de itens em Itu-SP, promovendo solidariedade, reutilização e conexão entre moradores da cidade.
+## 📦 Como Usar Localmente
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/conecta-itu.git
+   ```
