@@ -1,0 +1,389 @@
+/* Reset básico */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header.Topo {
+  background-color: #2c3e50;
+  padding: 60px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+header.Topo h1 {
+  color: #fff;
+  font-size: 28px;
+}
+
+header.Topo .botao {
+  text-decoration: none;
+  background-color: #fff;
+  color: #2c3e50;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+header.Topo .botao:hover {
+  background-color: #34495e;
+}
+
+/* Barra de Pesquisa */
+
+section.pesquisa {
+  text-align: center;
+  margin: 30px 0;
+}
+
+#campo-pesquisa {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Dark Mode */
+.toggle-dark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* Frase destaque */
+section.frase {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* Botão de destaque */
+.anunciar {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.botao-destaque {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.botao-destaque:hover {
+  background-color: #34495e;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px 40px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 280px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.card span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #2c3e50;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  background-color: #34495e;
+}
+
+/* Rodapé */
+footer.creditos {
+  background-color: #eee;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Página de Anúncio */
+
+header {
+  background-color: #2c3e50;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 28px;
+}
+
+header a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #fff;
+  color: #2c3e50;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+header a:hover {
+  background-color: #e5ffe9;
+}
+
+/* Formulário */
+
+form#form-anuncio {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+form button[type="submit"] {
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #34495e;
+}
+
+/* Estilo do formulário no modo escuro */
+body.dark-mode form#form-anuncio {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea,
+body.dark-mode form select {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: 1px solid #444;
+}
+
+body.dark-mode form input::placeholder,
+body.dark-mode form textarea::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode header {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode header a {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-mode header a:hover {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode footer.creditos {
+  background-color: #1a1a1a;
+  color: #999;
+}
+
+/* Rodapé */
+footer.creditos {
+  background-color: #eee;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* DarkMode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header.Topo {
+  background-color: #1f1f1f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .botao,
+body.dark-mode .botao-destaque,
+body.dark-mode .toggle-dark {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-mode .botao:hover,
+body.dark-mode .botao-destaque:hover,
+body.dark-mode .toggle-dark:hover {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #eaeaea;
+  border: 1px solid #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .card a {
+  background-color: #2c3e50;
+  color: white;
+}
+
+body.dark-mode footer.creditos {
+  background-color: #1a1a1a;
+  color: #999;
+}
+
+/* Estilo - Texto copiado */
+
+.card button {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #34495e;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  header.Topo {
+    padding: 20px 10px;
+  }
+
+  header.Topo .botao {
+    width: 100%;
+    max-width: 200px;
+    margin: 5px auto;
+    text-align: center;
+  }
+
+  .toggle-dark {
+    font-size: 30px;
+    padding: 5px 10px;
+  }
+
+  .botao-destaque {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  form#form-anuncio {
+    width: 95%;
+    padding: 20px;
+  }
+}

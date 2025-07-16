@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <title>Página Inicial</title>
+  </head>
+  <body>
+    <header class="Topo">
+      <h1>Conecta Itu</h1>
+
+      <a href="anunciar.html" class="botao">Anunciar</a>
+
+      <a href="#cards" class="botao">Ver Itens</a>
+
+      <button onclick="toggleDarkMode()" class="toggle-dark" id="darkModeBtn">
+        <i class="fa-regular fa-moon" id="icon-tema"></i>
+      </button>
+    </header>
+
+    <section class="pesquisa">
+      <input
+        type="text"
+        id="campo-pesquisa"
+        placeholder="Buscar por título, categoria ou bairro..."
+      />
+    </section>
+
+    <section class="frase">
+      <p>Doe, Troque, Conecte. Tudo em Itu-SP.</p>
+    </section>
+
+    <section class="anunciar">
+      <a href="anunciar.html" class="botao-destaque">Anunciar Item agora</a>
+    </section>
+
+    <!-- Cards anúncio -->
+
+    <section class="cards" id="cards">
+      <!-- Área dos cards -->
+    </section>
+
+    <footer class="creditos">
+      <p>Projeto de Extensão – João | Conecta Itu © 2025</p>
+    </footer>
+  </body>
+</html>

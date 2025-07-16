@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Anúncio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Anunciar Item</h1>
+      <a href="index.html">Voltar</a>
+    </header>
+
+    <form id="form-anuncio">
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" required />
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" required></textarea>
+
+      <label for="tipo">Tipo de anúncio:</label>
+      <select id="tipo" required>
+        <option value="doacao">Doação</option>
+        <option value="troca">Troca</option>
+      </select>
+
+      <label for="categoria">Categoria:</label>
+      <select id="categoria" required>
+        <option>Roupa</option>
+        <option>Alimento</option>
+        <option>Serviço</option>
+        <option>Outro</option>
+      </select>
+
+      <label for="tempo">Tempo de uso:</label>
+      <input type="text" id="tempo" placeholder="Ex: 1 ano, pouco uso" />
+
+      <label for="bairro">Bairro:</label>
+      <input type="text" id="bairro" required />
+
+      <label for="contato">WhatsApp:</label>
+      <input type="text" id="contato" required />
+
+      <label for="imagem">Imagem:</label>
+      <input type="file" id="imagem" accept="image/*" />
+
+      <button type="submit">Anunciar</button>
+    </form>
+
+    <footer class="creditos">
+      <p>Conecta Itu © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
