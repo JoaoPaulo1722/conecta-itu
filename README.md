@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🧩 Conecta Itu – Plataforma de Doações e Trocas
 
 **Conecta-Itu** tem como objetivo **unir as pessoas da cidade de Itu-SP** de maneira **colaborativa**, permitindo que **doações** e **trocas** de itens e serviços aconteçam com facilidade.  
@@ -28,3 +29,7 @@ A plataforma é totalmente gratuita, intuitiva e pensada para impactar positivam
 - **JavaScript Vanilla**
 - **Font Awesome** (ícones)
 - **LocalStorage** (armazenamento local)
+=======
+# conecta-itu
+Plataforma colaborativa para troca e doação de itens em Itu-SP, promovendo solidariedade, reutilização e conexão entre moradores da cidade.
+>>>>>>> f035dc4270d3f0ea9ddc4b50a4d4a94e90be1187
