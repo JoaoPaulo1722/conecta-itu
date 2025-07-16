@@ -10,14 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Atualiza o ícone do modo escuro
-  if (icon) {
-    if (document.body.classList.contains("dark-mode")) {
-      icon.className = "fa-regular fa-sun";
-      icon.style.color = "#f4f6f8";
-    } else {
-      icon.className = "fa-regular fa-moon";
-      icon.style.color = "#f4f6f8";
-    }
+  if (document.body.classList.contains("dark-mode")) {
+    icon.className = "fa-regular fa-sun";
+    icon.style.color = "#f4f6f8"; // Ícone claro no fundo escuro
+  } else {
+    icon.className = "fa-regular fa-moon";
+    icon.style.color = "#2c3e50"; // Ícone escuro no fundo claro
   }
 
   // Formulário de anúncio
@@ -162,7 +160,7 @@ function toggleDarkMode() {
   const icon = document.getElementById("icon-tema");
   if (icon) {
     icon.className = isDark ? "fa-regular fa-sun" : "fa-regular fa-moon";
-    icon.style.color = isDark ? "#f4f6f8" : "#f4f6f8";
+    icon.style.color = isDark ? "#f4f6f8" : "#2c3e50";
   }
 }
 
