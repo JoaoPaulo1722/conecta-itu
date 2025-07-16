@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       icon.style.color = "#f4f6f8";
     } else {
       icon.className = "fa-regular fa-moon";
-      icon.style.color = "#2C3E50";
+      icon.style.color = "#f4f6f8";
     }
   }
 
@@ -162,7 +162,7 @@ function toggleDarkMode() {
   const icon = document.getElementById("icon-tema");
   if (icon) {
     icon.className = isDark ? "fa-regular fa-sun" : "fa-regular fa-moon";
-    icon.style.color = isDark ? "#f4f6f8" : "#2C3E50";
+    icon.style.color = isDark ? "#f4f6f8" : "#f4f6f8";
   }
 }
 
