@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página de Anúncio</title>
+    <title>Anunciar Item</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <!-- Botão de modo escuro -->
+    <button onclick="toggleDarkMode()" class="toggle-dark" id="darkModeBtn">
+      <i class="fa-regular fa-moon" id="icon-tema"></i>
+    </button>
+
+    <!-- TOPO e TÍTULO -->
+    <div class="page-anuncio">
       <h1>Anunciar Item</h1>
       <a href="index.html">Voltar</a>
-    </header>
+    </div>
 
+    <!-- FORMULÁRIO DE ANÚNCIO -->
     <form id="form-anuncio">
       <label for="titulo">Título:</label>
       <input type="text" id="titulo" required />
@@ -27,30 +38,32 @@
 
       <label for="categoria">Categoria:</label>
       <select id="categoria" required>
-        <option>Roupa</option>
-        <option>Alimento</option>
-        <option>Serviço</option>
-        <option>Outro</option>
+        <option value="Roupa">Roupa</option>
+        <option value="Eletrônico">Eletrônico</option>
+        <option value="Móvel">Móvel</option>
+        <option value="Brinquedo">Brinquedo</option>
+        <option value="Outro">Outro</option>
       </select>
 
       <label for="tempo">Tempo de uso:</label>
-      <input type="text" id="tempo" placeholder="Ex: 1 ano, pouco uso" />
+      <input
+        type="text"
+        id="tempo"
+        placeholder="Ex: 1 ano, pouco uso"
+        required
+      />
 
       <label for="bairro">Bairro:</label>
       <input type="text" id="bairro" required />
 
       <label for="contato">WhatsApp:</label>
-      <input type="text" id="contato" required />
+      <input type="tel" id="contato" placeholder="Ex: 11 91234-5678" required />
 
       <label for="imagem">Imagem:</label>
       <input type="file" id="imagem" accept="image/*" />
 
-      <button type="submit">Anunciar</button>
+      <button type="submit">Cadastrar Anúncio</button>
     </form>
-
-    <footer class="creditos">
-      <p>Conecta Itu © 2025</p>
-    </footer>
 
     <script src="script.js"></script>
   </body>

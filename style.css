@@ -1,5 +1,4 @@
-/* Reset básico */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -10,11 +9,12 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f4f6f8;
-  color: #333;
+  color: #2c3e50;
   line-height: 1.6;
+  font-size: 16px;
 }
 
-/* Header */
+/* Header principal */
 header.Topo {
   background-color: #2c3e50;
   padding: 60px 20px 20px;
@@ -44,10 +44,27 @@ header.Topo .botao {
 
 header.Topo .botao:hover {
   background-color: #34495e;
+  color: #fff;
 }
 
-/* Barra de Pesquisa */
+/* Botão modo escuro */
 
+.toggle-dark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 37px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#icon-tema {
+  color: #2c3e50; /* visível no modo claro */
+}
+
+/* Pesquisa */
 section.pesquisa {
   text-align: center;
   margin: 30px 0;
@@ -62,18 +79,7 @@ section.pesquisa {
   border-radius: 8px;
 }
 
-/* Dark Mode */
-.toggle-dark {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 35px;
-  cursor: pointer;
-}
-
-/* Frase destaque */
+/* Frase */
 section.frase {
   text-align: center;
   margin: 30px 0;
@@ -81,7 +87,7 @@ section.frase {
   color: #444;
 }
 
-/* Botão de destaque */
+/* Botão destaque */
 .anunciar {
   text-align: center;
   margin-bottom: 30px;
@@ -131,14 +137,10 @@ section.frase {
   margin: 10px 0 5px;
 }
 
-.card p {
+.card p,
+.card span {
   font-size: 0.95rem;
   margin-bottom: 5px;
-}
-
-.card span {
-  font-size: 0.9rem;
-  color: #666;
 }
 
 .card a {
@@ -156,45 +158,73 @@ section.frase {
   background-color: #34495e;
 }
 
+/* Botão copiar */
+.card button {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #34495e;
+}
+
 /* Rodapé */
 footer.creditos {
-  background-color: #eee;
+  background-color: #eaeaea;
   padding: 20px;
   text-align: center;
   font-size: 0.9rem;
-  color: #777;
+  color: #666;
 }
 
 /* Página de Anúncio */
+/* Topo da página de anúncio */
 
-header {
-  background-color: #2c3e50;
-  padding: 20px;
+/* Topo da página de anúncio */
+
+.page-anuncio {
+  max-width: 600px;
+  margin: 40px auto 10px;
+  padding: 0 20px;
   text-align: center;
 }
 
-header h1 {
-  color: #fff;
+.page-anuncio h1 {
   font-size: 28px;
-}
-
-header a {
-  display: inline-block;
-  margin-top: 10px;
-  text-decoration: none;
-  background-color: #fff;
   color: #2c3e50;
-  padding: 8px 16px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s;
+  margin-bottom: 8px;
 }
 
-header a:hover {
-  background-color: #e5ffe9;
+.page-anuncio a {
+  color: #2c3e50;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: color 0.3s;
 }
 
-/* Formulário */
+.page-anuncio a:hover {
+  color: #1a73e8;
+}
+
+body.dark-mode .page-anuncio h1,
+body.dark-mode .page-anuncio a {
+  color: #f0f0f0;
+}
+
+body.dark-mode .page-anuncio a:hover {
+  color: #90caf9;
+}
 
 form#form-anuncio {
   max-width: 600px;
@@ -206,19 +236,20 @@ form#form-anuncio {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-size: 1rem;
 }
 
 form label {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
 }
 
 form input,
 form select,
 form textarea {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1rem;
 }
 
@@ -243,7 +274,39 @@ form button[type="submit"]:hover {
   background-color: #34495e;
 }
 
-/* Estilo do formulário no modo escuro */
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header.Topo {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .botao,
+body.dark-mode .botao-destaque,
+body.dark-mode .toggle-dark {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-mode .botao:hover,
+body.dark-mode .botao-destaque:hover {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode #icon-tema {
+  color: #f4f6f8;
+}
+
+body.dark-mode #campo-pesquisa {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: 1px solid #444;
+}
+
 body.dark-mode form#form-anuncio {
   background-color: #1e1e1e;
   border: 1px solid #333;
@@ -263,121 +326,38 @@ body.dark-mode form textarea::placeholder {
   color: #aaa;
 }
 
-body.dark-mode header {
-  background-color: #1f1f1f;
-}
-
-body.dark-mode header a {
-  background-color: #2c2c2c;
-  color: #e0e0e0;
-  border: 1px solid #444;
-}
-
-body.dark-mode header a:hover {
-  background-color: #3a3a3a;
-}
-
 body.dark-mode footer.creditos {
   background-color: #1a1a1a;
   color: #999;
-}
-
-/* Rodapé */
-footer.creditos {
-  background-color: #eee;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 40px;
-}
-
-/* DarkMode */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode header.Topo {
-  background-color: #1f1f1f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-body.dark-mode .botao,
-body.dark-mode .botao-destaque,
-body.dark-mode .toggle-dark {
-  background-color: #2c2c2c;
-  color: #e0e0e0;
-  border: 1px solid #444;
-}
-
-body.dark-mode .botao:hover,
-body.dark-mode .botao-destaque:hover,
-body.dark-mode .toggle-dark:hover {
-  background-color: #3a3a3a;
 }
 
 body.dark-mode .card {
   background-color: #1e1e1e;
   color: #eaeaea;
   border: 1px solid #333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode .card a {
   background-color: #2c3e50;
-  color: white;
+}
+/* Teste */
+
+/* Garantir que a lua fique visível no modo claro */
+body:not(.dark-mode) .toggle-dark i.fa-moon {
+  color: #f4c542 !important; /* azul escuro visível no header escuro */
 }
 
-body.dark-mode footer.creditos {
-  background-color: #1a1a1a;
-  color: #999;
+/* Sol brilhando no modo escuro */
+body.dark-mode .toggle-dark i.fa-sun {
+  color: #fcd440 !important; /* dourado */
 }
 
-/* Estilo - Texto copiado */
+/* Teste */
 
-.card button {
-  display: inline-block;
-  width: 100%;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #2c3e50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.card button:hover {
-  background-color: #34495e;
-}
-
-/* Mobile */
-
+/* Responsivo */
 @media (max-width: 600px) {
-  header.Topo {
-    padding: 20px 10px;
-  }
-
-  header.Topo .botao {
-    width: 100%;
-    max-width: 200px;
-    margin: 5px auto;
-    text-align: center;
-  }
-
-  .toggle-dark {
-    font-size: 30px;
-    padding: 5px 10px;
-  }
-
-  .botao-destaque {
-    width: 90%;
-    font-size: 16px;
-  }
-
+  .botao-destaque,
+  .botao,
   .card {
     width: 90%;
   }

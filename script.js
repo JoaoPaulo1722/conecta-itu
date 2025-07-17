@@ -4,21 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const campoPesquisa = document.getElementById("campo-pesquisa");
   const icon = document.getElementById("icon-tema");
 
-  // Modo escuro ativo?
+  // Ativa modo escuro se estiver salvo
   if (localStorage.getItem("modo-escuro") === "true") {
     document.body.classList.add("dark-mode");
   }
 
-  // Atualiza o ícone do modo escuro
-  if (document.body.classList.contains("dark-mode")) {
-    icon.className = "fa-regular fa-sun";
-    icon.style.color = "#f4f6f8"; // Ícone claro no fundo escuro
-  } else {
-    icon.className = "fa-regular fa-moon";
-    icon.style.color = "#2c3e50"; // Ícone escuro no fundo claro
+  // Atualiza o ícone de tema ao carregar
+  if (icon) {
+    if (document.body.classList.contains("dark-mode")) {
+      icon.className = "fa-regular fa-sun";
+    } else {
+      icon.className = "fa-regular fa-moon";
+    }
   }
 
-  // Formulário de anúncio
+  // Anúncio
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -32,9 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const tempo = document.getElementById("tempo").value;
       const tipo = document.getElementById("tipo").value;
 
-      // Se uma imagem foi enviada, ler como base64
       if (imagemInput.files && imagemInput.files[0]) {
-        const reader = new FileReader(); // é uma ferramenta do JS para ler arquivos no navegador.
+        const reader = new FileReader();
         reader.onload = function (e) {
           const imagem = e.target.result;
           salvarAnuncio(
@@ -48,9 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
             tipo
           );
         };
-        reader.readAsDataURL(imagemInput.files[0]); // transforma a imagem em um texto gigante em base64, que pode ser usado direto no src da <img>.
+        reader.readAsDataURL(imagemInput.files[0]);
       } else {
-        const imagem = ""; // Se não tiver imagem, continua
+        const imagem = "";
         salvarAnuncio(
           titulo,
           descricao,
@@ -65,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Renderizar cards na página inicial
+  // Exibir cards
   if (cardsContainer) {
     const anuncios = JSON.parse(localStorage.getItem("anuncios")) || [];
 
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Filtro de pesquisa
+  // Pesquisa
   if (campoPesquisa) {
     campoPesquisa.addEventListener("input", () => {
       const termo = campoPesquisa.value.toLowerCase();
@@ -121,8 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-// 🔁 Funções utilitárias
 
 function salvarAnuncio(
   titulo,
@@ -154,13 +151,16 @@ function salvarAnuncio(
 }
 
 function toggleDarkMode() {
-  const isDark = document.body.classList.toggle("dark-mode");
-  localStorage.setItem("modo-escuro", isDark);
-
+  const body = document.body;
   const icon = document.getElementById("icon-tema");
-  if (icon) {
-    icon.className = isDark ? "fa-regular fa-sun" : "fa-regular fa-moon";
-    icon.style.color = isDark ? "#f4f6f8" : "#2c3e50";
+
+  body.classList.toggle("dark-mode");
+  localStorage.setItem("modo-escuro", body.classList.contains("dark-mode"));
+
+  if (body.classList.contains("dark-mode")) {
+    icon.className = "fa-regular fa-sun";
+  } else {
+    icon.className = "fa-regular fa-moon";
   }
 }
 
@@ -173,12 +173,12 @@ function copiarDadosAnuncio(botao) {
   const texto = `📦 ${titulo}\n📍 ${bairro}\n📝 ${descricao}\n#ConectaItu`;
   navigator.clipboard.writeText(texto);
 
-  const textoOriginal = botao.textContent;
+  const original = botao.textContent;
   botao.textContent = "Copiado!";
   botao.disabled = true;
 
   setTimeout(() => {
-    botao.textContent = textoOriginal;
+    botao.textContent = original;
     botao.disabled = false;
   }, 1500);
 }
